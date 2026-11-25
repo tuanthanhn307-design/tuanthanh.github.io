@@ -19,17 +19,12 @@
       --text-secondary: #94a3b8;
       --accent-stem: #38bdf8;
       --accent-photo: #f59e0b;
-      <div class="photo-card">
-  <img
-    src="https://raw.githubusercontent.com/tuanthanhn307-design/tuanthanh.username.github.io/refs/heads/main/86b2370c-4f9a-4559-80c5-199b59b1ca4d.jfif"
-    alt="Khoảnh khắc của Nguyễn Tuấn Thanh"
-    style="object-position: center 22%;"
-  />
-  <div class="photo-overlay">
-    <span class="photo-meta mono">11T2 • KHOẢNH KHẮC</span>
-    <div class="photo-caption">Khoảnh khắc kỷ niệm</div>
-  </div>
-</div>
+      --accent-volley: #a78bfa;
+      --accent-creative: #fb7185;
+      --accent-charity: #34d399;
+      --border-color: rgba(148, 163, 184, 0.16);
+      --grid-color: rgba(56, 189, 248, 0.05);
+      --shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
     }
 
     [data-theme="light"] {
