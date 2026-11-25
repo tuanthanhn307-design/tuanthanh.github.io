@@ -693,4 +693,187 @@
               <strong>Tư duy Logic &amp; Giải quyết vấn đề</strong>
               Phân tích bài toán, thử nghiệm giả thuyết và tối ưu quy trình làm việc.
             </li>
-            
+            <li>
+              <strong>Điện tử &amp; Lập trình cơ bản</strong>
+              Làm quen với mạch điện, cảm biến, vi điều khiển và tư duy lập trình.
+            </li>
+            <li>
+              <strong>Thiết kế &amp; Thực nghiệm mô hình</strong>
+              Lên bản vẽ ý tưởng, lắp ráp và kiểm thử các sản phẩm STEM học đường.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Photography Card -->
+        <div class="skill-panel photo">
+          <div class="panel-title">
+            <span>📸</span>
+            <span>Kỹ năng Nhiếp ảnh</span>
+          </div>
+          <p class="panel-desc">
+            Ghi lại những khoảnh khắc đời sống, thiên nhiên và góc nhìn nghệ thuật thông qua ánh sáng và bố cục.
+          </p>
+          <ul class="skill-list">
+            <li>
+              <strong>Bố cục &amp; Ánh sáng</strong>
+              Áp dụng tỷ lệ khung hình, đường dẫn và tận dụng ánh sáng tự nhiên hiệu quả.
+            </li>
+            <li>
+              <strong>Chụp ảnh Đời sống &amp; Phong cảnh</strong>
+              Lưu giữ hình ảnh trường lớp, hoạt động tập thể và cảnh sắc quê hương.
+            </li>
+            <li>
+              <strong>Hậu kỳ &amp; Chỉnh màu</strong>
+              Cân chỉnh độ sáng, tương phản và màu sắc để bức ảnh hài hòa, có chiều sâu.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="bo-suu-tap">
+      <div class="section-header">
+        <span class="section-tag mono">// 03. GÓC LƯU TRỮ</span>
+        <h2 class="section-title">Khoảnh khắc Nhiếp ảnh &amp; STEM</h2>
+      </div>
+      <div class="gallery-grid">
+        <div class="photo-card">
+          <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80" alt="Góc máy nhiếp ảnh" />
+          <div class="photo-overlay">
+            <span class="photo-meta mono">PHOTOGRAPHY • 35MM f/1.8</span>
+            <div class="photo-caption">Góc nhìn qua ống kính</div>
+          </div>
+        </div>
+        <div class="photo-card">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Mạch điện tử STEM" />
+          <div class="photo-overlay">
+            <span class="photo-meta mono">STEM LAB • HARDWARE</span>
+            <div class="photo-caption">Khám phá mạch điện tử &amp; công nghệ</div>
+          </div>
+        </div>
+        <div class="photo-card">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80" alt="Ánh sáng hoàng hôn" />
+          <div class="photo-overlay">
+            <span class="photo-meta mono">GOLDEN HOUR • ISO 100</span>
+            <div class="photo-caption">Sắc màu ánh sáng tự nhiên</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="lien-he">
+      <div class="contact-box">
+        <span class="section-tag mono">// 04. KẾT NỐI</span>
+        <h2 class="section-title">Cùng giao lưu về Nhiếp ảnh &amp; STEM</h2>
+        <p>
+          Bạn có thể sao chép nhanh thông tin giới thiệu của mình hoặc ghé thăm GitHub để cùng trao đổi, chia sẻ ý tưởng nhé!
+        </p>
+        <div class="contact-actions">
+          <button type="button" class="btn btn-primary" id="copyInfoBtn">📋 Sao chép thông tin giới thiệu</button>
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">💻 GitHub cá nhân</a>
+        </div>
+        <div class="copy-feedback mono" id="copyFeedback" role="status" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 <strong>Nguyễn Tuấn Thanh</strong> — Lớp 11T2, Trường THPT Chuyên Bến Tre (Vĩnh Long).</p>
+    </div>
+  </footer>
+
+  <script>
+    // Xử lý hiển thị ảnh chân dung hoặc khung placeholder nếu ảnh chưa tồn tại
+    const avatarImg = document.getElementById('avatarImg');
+    const avatarPlaceholder = document.getElementById('avatarPlaceholder');
+
+    function syncAvatarState() {
+      if (avatarImg.complete && avatarImg.naturalWidth > 0) {
+        avatarImg.style.display = 'block';
+        avatarPlaceholder.style.display = 'none';
+      } else {
+        avatarImg.style.display = 'none';
+        avatarPlaceholder.style.display = 'block';
+      }
+    }
+
+    avatarImg.addEventListener('load', syncAvatarState);
+    avatarImg.addEventListener('error', syncAvatarState);
+    syncAvatarState();
+
+    // Chuyển đổi chế độ Sáng / Tối
+    const themeToggle = document.getElementById('themeToggle');
+    const htmlEl = document.documentElement;
+
+    themeToggle.addEventListener('click', () => {
+      const isDark = htmlEl.getAttribute('data-theme') === 'dark';
+      const nextTheme = isDark ? 'light' : 'dark';
+      htmlEl.setAttribute('data-theme', nextTheme);
+      themeToggle.textContent = nextTheme === 'dark' ? '☀️ Sáng' : '🌙 Tối';
+    });
+
+    // Mở / đóng menu trên điện thoại
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.textContent = '☰';
+    }
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.textContent = isOpen ? '✕' : '☰';
+    });
+
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 820) {
+        closeMobileMenu();
+      }
+    });
+
+    // Sao chép thông tin giới thiệu (có cơ chế dự phòng nếu clipboard bị chặn)
+    const copyBtn = document.getElementById('copyInfoBtn');
+    const feedback = document.getElementById('copyFeedback');
+    const bioText = 'Nguyễn Tuấn Thanh - Học sinh lớp 11T2, Trường THPT Chuyên Bến Tre (tỉnh Vĩnh Long). Đam mê Nhiếp ảnh & STEM.';
+
+    function showCopiedMessage() {
+      feedback.textContent = '✓ Đã sao chép thông tin vào bộ nhớ tạm!';
+      clearTimeout(showCopiedMessage.timer);
+      showCopiedMessage.timer = setTimeout(() => {
+        feedback.textContent = '';
+      }, 3000);
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(bioText);
+        } else {
+          const tempInput = document.createElement('textarea');
+          tempInput.value = bioText;
+          tempInput.setAttribute('readonly', '');
+          tempInput.style.position = 'absolute';
+          tempInput.style.left = '-9999px';
+          document.body.appendChild(tempInput);
+          tempInput.select();
+          document.execCommand('copy');
+          document.body.removeChild(tempInput);
+        }
+        showCopiedMessage();
+      } catch (err) {
+        feedback.textContent = 'Không thể tự động sao chép, bạn hãy bôi đen và copy thủ công nhé.';
+      }
+    });
+  </script>
+</body>
+</html>
