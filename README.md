@@ -982,11 +982,12 @@
         <span class="section-tag mono">// 06. KẾT NỐI</span>
         <h2 class="section-title">Cùng giao lưu về Nhiếp ảnh, STEM &amp; Bóng chuyền</h2>
         <p>
-          Liên hệ trực tiếp qua số điện thoại <strong>0974093831</strong>, sao chép nhanh thông tin giới thiệu hoặc ghé thăm GitHub để cùng trao đổi nhé!
+          Liên hệ trực tiếp qua số điện thoại <strong>0974093831</strong>, sao chép nhanh thông tin giới thiệu hoặc ghé thăm Facebook / GitHub để cùng trao đổi nhé!
         </p>
         <div class="contact-actions">
           <a href="tel:0974093831" class="btn btn-primary">📞 Gọi 0974093831</a>
           <button type="button" class="btn btn-outline" id="copyInfoBtn">📋 Sao chép thông tin &amp; SĐT</button>
+          <a href="https://www.facebook.com/share/1LZqzdeCnJ/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">📘 Facebook cá nhân</a>
           <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">💻 GitHub cá nhân</a>
         </div>
         <div class="copy-feedback mono" id="copyFeedback" role="status" aria-live="polite"></div>
@@ -1120,6 +1121,3 @@
   </script>
 </body>
 </html>
-```[cite: 3]
-
-Bạn đã tải file `anh-dai-dien.jpg` lên thư mục `images/` trên GitHub chưa hay cần mình hỗ trợ thêm phần nào khác?
