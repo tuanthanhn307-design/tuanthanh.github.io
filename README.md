@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="vi" data-theme="dark">
 <head>
@@ -19,6 +20,7 @@
       --text-secondary: #94a3b8;
       --accent-stem: #38bdf8;
       --accent-photo: #f59e0b;
+      --accent-charity: #34d399;
       --border-color: rgba(148, 163, 184, 0.16);
       --grid-color: rgba(56, 189, 248, 0.05);
       --shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
@@ -33,12 +35,12 @@
       --text-secondary: #475569;
       --accent-stem: #0284c7;
       --accent-photo: #d97706;
+      --accent-charity: #059669;
       --border-color: rgba(15, 23, 42, 0.12);
       --grid-color: rgba(2, 132, 199, 0.06);
       --shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
     }
 
-    /* Đã sửa lỗi: đổi "- {" thành "* {" */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -314,7 +316,7 @@
     .avatar-box {
       position: relative;
       width: 100%;
-      aspect-ratio: 4 / 4.2;
+      aspect-ratio: 4 / 4.5;
       border-radius: 12px;
       overflow: hidden;
       margin: 8px 0;
@@ -328,6 +330,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center top;
       display: block;
     }
 
@@ -398,6 +401,15 @@
     .info-value {
       font-weight: 700;
       font-size: 1.05rem;
+    }
+
+    .info-value a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .info-value a:hover {
+      color: var(--accent-stem);
     }
 
     /* Skills Bento Grid */
@@ -510,7 +522,57 @@
       font-size: 0.98rem;
     }
 
-    /* Contact Box */
+    /* Charity & Contact Box */
+    .charity-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-top: 3px solid var(--accent-charity);
+      border-radius: 18px;
+      padding: 32px 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .qr-frame {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 12px;
+      max-width: 280px;
+      margin: 0 auto;
+      border: 1px solid var(--border-color);
+    }
+
+    .qr-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .bank-details {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 18px 0 22px;
+    }
+
+    .bank-details li {
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: rgba(148, 163, 184, 0.08);
+      border: 1px solid var(--border-color);
+      font-size: 0.94rem;
+      color: var(--text-secondary);
+    }
+
+    .bank-details strong {
+      color: var(--text-primary);
+    }
+
     .contact-box {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -522,7 +584,7 @@
 
     .contact-box p {
       color: var(--text-secondary);
-      max-width: 540px;
+      max-width: 560px;
       margin: 10px auto 24px;
     }
 
@@ -549,9 +611,10 @@
     }
 
     @media (max-width: 820px) {
-      .hero {
+      .hero,
+      .charity-grid {
         grid-template-columns: 1fr;
-        padding-top: 40px;
+        padding-top: 32px;
       }
       .nav-links {
         display: none;
@@ -579,6 +642,7 @@
           <a href="#gioi-thieu">Giới thiệu</a>
           <a href="#ky-nang">Kỹ năng</a>
           <a href="#bo-suu-tap">Góc Nhiếp ảnh</a>
+          <a href="#tu-thien">Từ thiện</a>
           <a href="#lien-he">Liên hệ</a>
         </nav>
         <button type="button" class="btn-icon" id="themeToggle" aria-label="Đổi giao diện Sáng hoặc Tối">☀️ Sáng</button>
@@ -591,6 +655,7 @@
       <a href="#gioi-thieu">Giới thiệu</a>
       <a href="#ky-nang">Kỹ năng STEM &amp; Nhiếp ảnh</a>
       <a href="#bo-suu-tap">Góc Nhiếp ảnh</a>
+      <a href="#tu-thien">Mã chuyển khoản từ thiện</a>
       <a href="#lien-he">Liên hệ</a>
     </nav>
   </header>
@@ -612,7 +677,7 @@
         </p>
         <div class="cta-group">
           <a href="#ky-nang" class="btn btn-primary">Khám phá kỹ năng</a>
-          <a href="#bo-suu-tap" class="btn btn-outline">Xem góc nhiếp ảnh</a>
+          <a href="#tu-thien" class="btn btn-outline">Mã chuyển khoản từ thiện</a>
         </div>
       </div>
 
@@ -626,14 +691,14 @@
         <div class="avatar-box">
           <img
             id="avatarImg"
-            src="images/anh-ca-nhan.jpg"
-            alt="Chân dung Nguyễn Tuấn Thanh"
+            src="images/anh-dai-dien.jpg"
+            alt="Ảnh đại diện Nguyễn Tuấn Thanh"
           />
           <div class="avatar-placeholder" id="avatarPlaceholder">
             <p class="mono" style="font-size: 2rem; margin-bottom: 8px;">📷</p>
-            <strong>Ảnh chân dung của bạn</strong>
+            <strong>Ảnh đại diện của bạn</strong>
             <p style="font-size: 0.84rem; margin-top: 6px; color: #cbd5e1;">
-              Tải ảnh lên <code class="mono">images/anh-ca-nhan.jpg</code> trên GitHub để hiển thị tại đây.
+              Tải ảnh lên <code class="mono">images/anh-dai-dien.jpg</code> trên GitHub để hiển thị tại đây.
             </p>
           </div>
           <div class="crosshair"></div>
@@ -658,16 +723,16 @@
           <div class="info-value">Nguyễn Tuấn Thanh</div>
         </div>
         <div class="info-card">
-          <div class="info-label">Lớp</div>
-          <div class="info-value">11T2</div>
-        </div>
-        <div class="info-card">
-          <div class="info-label">Trường học</div>
-          <div class="info-value">THPT Chuyên Bến Tre</div>
+          <div class="info-label">Lớp &amp; Trường</div>
+          <div class="info-value">11T2 • THPT Chuyên Bến Tre</div>
         </div>
         <div class="info-card">
           <div class="info-label">Địa phương</div>
           <div class="info-value">Tỉnh Vĩnh Long</div>
+        </div>
+        <div class="info-card">
+          <div class="info-label">Số điện thoại liên hệ</div>
+          <div class="info-value mono"><a href="tel:0974093831">0974093831</a></div>
         </div>
       </div>
     </section>
@@ -762,16 +827,42 @@
       </div>
     </section>
 
+    <!-- Charity QR Section -->
+    <section id="tu-thien">
+      <div class="section-header">
+        <span class="section-tag mono" style="color: var(--accent-charity);">// 04. ĐÓNG GÓP &amp; TỪ THIỆN</span>
+        <h2 class="section-title">Mã chuyển khoản từ thiện</h2>
+      </div>
+      <div class="charity-grid">
+        <div class="qr-frame">
+          <img src="images/qr-tu-thien.jpg" alt="Mã QR chuyển khoản từ thiện Agribank Nguyễn Tuấn Thanh" />
+        </div>
+        <div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Quét mã VietQR qua ứng dụng Ngân hàng</h3>
+          <p style="color: var(--text-secondary); font-size: 0.94rem;">
+            Hỗ trợ chuyển khoản nhanh Agribank và liên ngân hàng NAPAS 24/7. Vui lòng kiểm tra đúng thông tin người nhận trước khi chuyển.
+          </p>
+          <ul class="bank-details mono">
+            <li><strong>Chủ tài khoản:</strong> NGUYEN TUAN THANH</li>
+            <li><strong>Số tài khoản:</strong> 7104205433117</li>
+            <li><strong>Ngân hàng:</strong> Agribank — Chi nhánh H. Bình Đại - Bến Tre</li>
+          </ul>
+          <button type="button" class="btn btn-outline" id="copyBankBtn">🏦 Sao chép STK &amp; Ngân hàng</button>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="lien-he">
       <div class="contact-box">
-        <span class="section-tag mono">// 04. KẾT NỐI</span>
+        <span class="section-tag mono">// 05. KẾT NỐI</span>
         <h2 class="section-title">Cùng giao lưu về Nhiếp ảnh &amp; STEM</h2>
         <p>
-          Bạn có thể sao chép nhanh thông tin giới thiệu của mình hoặc ghé thăm GitHub để cùng trao đổi, chia sẻ ý tưởng nhé!
+          Liên hệ trực tiếp qua số điện thoại <strong>0974093831</strong>, sao chép nhanh thông tin giới thiệu hoặc ghé thăm GitHub để cùng trao đổi nhé!
         </p>
         <div class="contact-actions">
-          <button type="button" class="btn btn-primary" id="copyInfoBtn">📋 Sao chép thông tin giới thiệu</button>
+          <a href="tel:0974093831" class="btn btn-primary">📞 Gọi 0974093831</a>
+          <button type="button" class="btn btn-outline" id="copyInfoBtn">📋 Sao chép thông tin &amp; SĐT</button>
           <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">💻 GitHub cá nhân</a>
         </div>
         <div class="copy-feedback mono" id="copyFeedback" role="status" aria-live="polite"></div>
@@ -781,12 +872,12 @@
 
   <footer>
     <div class="container">
-      <p>© 2026 <strong>Nguyễn Tuấn Thanh</strong> — Lớp 11T2, Trường THPT Chuyên Bến Tre (Vĩnh Long).</p>
+      <p>© 2026 <strong>Nguyễn Tuấn Thanh</strong> — Lớp 11T2, Trường THPT Chuyên Bến Tre (Vĩnh Long) • SĐT: 0974093831.</p>
     </div>
   </footer>
 
   <script>
-    // Xử lý hiển thị ảnh chân dung hoặc khung placeholder nếu ảnh chưa tồn tại
+    // Xử lý hiển thị ảnh đại diện hoặc khung placeholder nếu ảnh chưa tồn tại
     const avatarImg = document.getElementById('avatarImg');
     const avatarPlaceholder = document.getElementById('avatarPlaceholder');
 
@@ -841,26 +932,24 @@
       }
     });
 
-    // Sao chép thông tin giới thiệu (có cơ chế dự phòng nếu clipboard bị chặn)
-    const copyBtn = document.getElementById('copyInfoBtn');
+    // Hàm sao chép có dự phòng
     const feedback = document.getElementById('copyFeedback');
-    const bioText = 'Nguyễn Tuấn Thanh - Học sinh lớp 11T2, Trường THPT Chuyên Bến Tre (tỉnh Vĩnh Long). Đam mê Nhiếp ảnh & STEM.';
 
-    function showCopiedMessage() {
-      feedback.textContent = '✓ Đã sao chép thông tin vào bộ nhớ tạm!';
-      clearTimeout(showCopiedMessage.timer);
-      showCopiedMessage.timer = setTimeout(() => {
+    function showFeedback(message) {
+      feedback.textContent = message;
+      clearTimeout(showFeedback.timer);
+      showFeedback.timer = setTimeout(() => {
         feedback.textContent = '';
       }, 3000);
     }
 
-    copyBtn.addEventListener('click', async () => {
+    async function copyTextWithFallback(text, successMsg) {
       try {
         if (navigator.clipboard && window.isSecureContext) {
-          await navigator.clipboard.writeText(bioText);
+          await navigator.clipboard.writeText(text);
         } else {
           const tempInput = document.createElement('textarea');
-          tempInput.value = bioText;
+          tempInput.value = text;
           tempInput.setAttribute('readonly', '');
           tempInput.style.position = 'absolute';
           tempInput.style.left = '-9999px';
@@ -869,10 +958,22 @@
           document.execCommand('copy');
           document.body.removeChild(tempInput);
         }
-        showCopiedMessage();
+        showFeedback(successMsg);
       } catch (err) {
-        feedback.textContent = 'Không thể tự động sao chép, bạn hãy bôi đen và copy thủ công nhé.';
+        showFeedback('Không thể tự động sao chép, bạn hãy copy thủ công nhé.');
       }
+    }
+
+    const copyInfoBtn = document.getElementById('copyInfoBtn');
+    const bioText = 'Nguyễn Tuấn Thanh - Học sinh lớp 11T2, Trường THPT Chuyên Bến Tre (tỉnh Vĩnh Long). Đam mê Nhiếp ảnh & STEM. SĐT: 0974093831.';
+    copyInfoBtn.addEventListener('click', () => {
+      copyTextWithFallback(bioText, '✓ Đã sao chép thông tin và số điện thoại vào bộ nhớ tạm!');
+    });
+
+    const copyBankBtn = document.getElementById('copyBankBtn');
+    const bankText = 'NGUYEN TUAN THANH - STK: 7104205433117 - Agribank Chi nhánh H. Bình Đại - Bến Tre';
+    copyBankBtn.addEventListener('click', () => {
+      copyTextWithFallback(bankText, '✓ Đã sao chép thông tin tài khoản từ thiện Agribank!');
     });
   </script>
 </body>
