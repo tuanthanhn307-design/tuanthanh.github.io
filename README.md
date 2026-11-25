@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="vi" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nguyễn Tuấn Thanh | 11T2 — Nhiếp ảnh, STEM &amp; Bóng chuyền</title>
-  <meta name="description" content="Trang giới thiệu bản thân của Nguyễn Tuấn Thanh - Học sinh lớp 11T2, Trường THPT Chuyên Bến Tre tại Vĩnh Long. Đam mê Nhiếp ảnh, STEM, Thiết kế 3D &amp; Lập trình sáng tạo và Chuyền hai Bóng chuyền." />
+  <meta name="description" content="Trang giới thiệu bản thân của Nguyễn Tuấn Thanh - Học sinh lớp 11T2, Trường THPT Chuyên Bến Tre tại Vĩnh Long. Đam mê Nhiếp ảnh, STEM, Thiết kế 3D &amp; Lập trình sáng tạo và Bóng chuyền (Chuyền 2)." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
@@ -341,7 +342,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center top;
+      object-position: center 22%;
       display: block;
     }
 
@@ -688,7 +689,7 @@
       <div class="nav-right">
         <nav class="nav-links" aria-label="Điều hướng chính">
           <a href="#gioi-thieu">Giới thiệu</a>
-          <a href="#ky-nang">Năng lực &amp; Đam mê</a>
+          <a href="#ky-nang">Kỹ năng</a>
           <a href="#thiet-bi">Thiết bị</a>
           <a href="#bo-suu-tap">Góc Nhiếp ảnh</a>
           <a href="#tu-thien">Từ thiện</a>
@@ -723,7 +724,7 @@
           <span class="highlight-stem">Nguyễn Tuấn Thanh</span>
         </h1>
         <p class="hero-desc">
-          Mình là học sinh lớp <strong>11T2</strong> tại trường <strong>THPT Chuyên Bến Tre (tỉnh Vĩnh Long)</strong>. Mình đam mê kết hợp tư duy logic của <span class="highlight-stem"><strong>STEM</strong></span>, góc nhìn sáng tạo qua ống kính <span class="highlight-photo"><strong>Nhiếp ảnh</strong></span> (<strong>Canon 5D3 + 50mm f/1.8 II</strong> &amp; <strong>Canon M200 + Lens Kit</strong>), <span class="highlight-creative"><strong>Thiết kế 3D &amp; Lập trình sáng tạo</strong></span> cùng kỹ năng <span class="highlight-volley"><strong>Chuyền hai Bóng chuyền</strong></span>.
+          Mình là học sinh lớp <strong>11T2</strong> tại trường <strong>THPT Chuyên Bến Tre (tỉnh Vĩnh Long)</strong>. Mình đam mê kết hợp tư duy logic của <span class="highlight-stem"><strong>STEM</strong></span>, góc nhìn sáng tạo qua ống kính <span class="highlight-photo"><strong>Nhiếp ảnh</strong></span> (<strong>Canon 5D3 + 50mm f/1.8 II</strong> &amp; <strong>Canon M200 + Lens Kit</strong>), <span class="highlight-creative"><strong>Thiết kế 3D &amp; Lập trình sáng tạo</strong></span> cùng tinh thần đồng đội ở vị trí <span class="highlight-volley"><strong>Chuyền 2 Bóng chuyền</strong></span>.
         </p>
         <div class="cta-group">
           <a href="#ky-nang" class="btn btn-primary">Khám phá năng lực &amp; đam mê</a>
@@ -841,10 +842,10 @@
         <div class="skill-panel volley" id="ky-nang-chuyen-hai">
           <div class="panel-title">
             <span>🏐</span>
-            <span>Kỹ năng Chuyền hai Bóng chuyền</span>
+            <span>Kỹ năng Chuyền 2 Bóng chuyền</span>
           </div>
           <p class="panel-desc">
-            Đảm nhận vai trò <strong>chuyền hai (setter)</strong> trong bóng chuyền — điều phối nhịp độ tấn công và kết nối đồng đội trên sân.
+            Đảm nhận vai trò <strong>Chuyền 2 (setter)</strong> trong bóng chuyền — điều phối nhịp độ tấn công và kết nối đồng đội trên sân.
           </p>
           <ul class="skill-list">
             <li>
@@ -1077,34 +1078,46 @@
       try {
         if (navigator.clipboard && window.isSecureContext) {
           await navigator.clipboard.writeText(text);
-        } else {
-          const tempInput = document.createElement('textarea');
-          tempInput.value = text;
-          tempInput.setAttribute('readonly', '');
-          tempInput.style.position = 'absolute';
-          tempInput.style.left = '-9999px';
-          document.body.appendChild(tempInput);
-          tempInput.select();
-          document.execCommand('copy');
-          document.body.removeChild(tempInput);
+          showFeedback(successMsg);
+          return;
         }
+      } catch (err) {}
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      try {
+        document.execCommand('copy');
         showFeedback(successMsg);
       } catch (err) {
         showFeedback('Không thể tự động sao chép, bạn hãy copy thủ công nhé.');
       }
+      document.body.removeChild(textarea);
+    }
+
+    const copyBankBtn = document.getElementById('copyBankBtn');
+    if (copyBankBtn) {
+      copyBankBtn.addEventListener('click', () => {
+        copyTextWithFallback(
+          'STK: 7104205433117 | Chủ TK: NGUYEN TUAN THANH | Ngân hàng: Agribank CN H. Bình Đại - Bến Tre',
+          'Đã sao chép thông tin tài khoản từ thiện!'
+        );
+      });
     }
 
     const copyInfoBtn = document.getElementById('copyInfoBtn');
-    const bioText = 'Nguyễn Tuấn Thanh - Học sinh lớp 11T2, Trường THPT Chuyên Bến Tre (tỉnh Vĩnh Long). Đam mê Nhiếp ảnh (Canon 5D3 + 50mm f/1.8 II & Canon M200 + Lens Kit), STEM, Thiết kế 3D & Lập trình sáng tạo và Chuyền hai Bóng chuyền. SĐT: 0974093831.';
-    copyInfoBtn.addEventListener('click', () => {
-      copyTextWithFallback(bioText, '✓ Đã sao chép thông tin và số điện thoại vào bộ nhớ tạm!');
-    });
-
-    const copyBankBtn = document.getElementById('copyBankBtn');
-    const bankText = 'NGUYEN TUAN THANH - STK: 7104205433117 - Agribank Chi nhánh H. Bình Đại - Bến Tre';
-    copyBankBtn.addEventListener('click', () => {
-      copyTextWithFallback(bankText, '✓ Đã sao chép thông tin tài khoản từ thiện Agribank!');
-    });
+    if (copyInfoBtn) {
+      copyInfoBtn.addEventListener('click', () => {
+        copyTextWithFallback(
+          'Nguyễn Tuấn Thanh — 11T2, THPT Chuyên Bến Tre (Vĩnh Long) | SĐT: 0974093831',
+          'Đã sao chép thông tin liên hệ!'
+        );
+      });
+    }
   </script>
 </body>
 </html>
