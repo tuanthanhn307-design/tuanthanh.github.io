@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi" data-theme="dark">
 <head>
@@ -334,23 +333,6 @@
       display: block;
     }
 
-    .avatar-placeholder {
-      text-align: center;
-      padding: 22px;
-      color: #e2e8f0;
-    }
-
-    .placeholder-badge {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 5px 10px;
-      border-radius: 6px;
-      background: rgba(56, 189, 248, 0.16);
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      color: #7dd3fc;
-      font-size: 0.78rem;
-    }
-
     .crosshair {
       position: absolute;
       inset: 14px;
@@ -565,20 +547,6 @@
       border-radius: 8px;
     }
 
-    .qr-fallback-box {
-      padding: 20px 12px;
-      color: #0f172a;
-      background: #f1f5f9;
-      border-radius: 10px;
-      border: 1px dashed #94a3b8;
-    }
-
-    .qr-note {
-      font-size: 0.74rem;
-      color: #475569;
-      margin-top: 8px;
-    }
-
     .bank-details {
       list-style: none;
       display: flex;
@@ -721,14 +689,6 @@
             src="images/anh-dai-dien.jpg"
             alt="Ảnh đại diện Nguyễn Tuấn Thanh"
           />
-          <div class="avatar-placeholder" id="avatarPlaceholder">
-            <p class="mono" style="font-size: 2.2rem; margin-bottom: 8px;">📷</p>
-            <strong>Chưa có ảnh đại diện</strong>
-            <p style="font-size: 0.84rem; margin-top: 6px; color: #cbd5e1;">
-              Tải ảnh chân dung của bạn lên GitHub với đường dẫn bên dưới để hiển thị:
-            </p>
-            <div class="placeholder-badge mono">images/anh-dai-dien.jpg</div>
-          </div>
           <div class="crosshair"></div>
         </div>
         <div class="vf-footer mono">
@@ -868,14 +828,6 @@
             src="images/qr-tu-thien.jpg"
             alt="Mã QR chuyển khoản từ thiện Agribank Nguyễn Tuấn Thanh"
           />
-          <div class="qr-fallback-box" id="qrFallbackBox" style="display: none;">
-            <p style="font-size: 1.8rem; margin-bottom: 6px;">🏦</p>
-            <strong style="font-size: 0.92rem;">Chưa có ảnh QR cá nhân</strong>
-            <p style="font-size: 0.78rem; color: #475569; margin-top: 4px;">
-              Tải ảnh mã QR lên <code class="mono">images/qr-tu-thien.jpg</code> hoặc chuyển khoản theo thông tin bên cạnh.
-            </p>
-          </div>
-          <div class="qr-note mono" id="qrStatusNote">VietQR • Agribank — 7104205433117</div>
         </div>
         <div>
           <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Quét mã VietQR qua ứng dụng Ngân hàng</h3>
@@ -917,39 +869,27 @@
   </footer>
 
   <script>
-    // 1. Xử lý hiển thị ảnh đại diện hoặc khung nhắc nếu chưa có file images/anh-dai-dien.jpg
+    // 1. Ảnh đại diện: ưu tiên images/anh-dai-dien.jpg, nếu chưa có thì hiện ảnh minh họa mẫu
     const avatarImg = document.getElementById('avatarImg');
-    const avatarPlaceholder = document.getElementById('avatarPlaceholder');
+    const avatarFallbackUrl = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80';
+    let avatarFallbackUsed = false;
 
-    function syncAvatarState() {
-      if (avatarImg.complete && avatarImg.naturalWidth > 0) {
-        avatarImg.style.display = 'block';
-        avatarPlaceholder.style.display = 'none';
-      } else {
-        avatarImg.style.display = 'none';
-        avatarPlaceholder.style.display = 'block';
+    avatarImg.addEventListener('error', () => {
+      if (!avatarFallbackUsed) {
+        avatarFallbackUsed = true;
+        avatarImg.src = avatarFallbackUrl;
       }
-    }
+    });
 
-    avatarImg.addEventListener('load', syncAvatarState);
-    avatarImg.addEventListener('error', syncAvatarState);
-    syncAvatarState();
-
-    // 2. Xử lý ảnh QR từ thiện: ưu tiên images/qr-tu-thien.jpg, nếu chưa có thì tự động tải mã VietQR Agribank
+    // 2. Ảnh QR từ thiện: ưu tiên images/qr-tu-thien.jpg, nếu chưa có thì hiện ảnh VietQR Agribank
     const charityQrImg = document.getElementById('charityQrImg');
-    const qrFallbackBox = document.getElementById('qrFallbackBox');
-    const qrStatusNote = document.getElementById('qrStatusNote');
     const vietQrFallbackUrl = 'https://img.vietqr.io/image/VBA-7104205433117-compact2.png?accountName=NGUYEN%20TUAN%20THANH';
-    let qrFallbackTried = false;
+    let qrFallbackUsed = false;
 
     charityQrImg.addEventListener('error', () => {
-      if (!qrFallbackTried) {
-        qrFallbackTried = true;
+      if (!qrFallbackUsed) {
+        qrFallbackUsed = true;
         charityQrImg.src = vietQrFallbackUrl;
-        qrStatusNote.textContent = 'Mã VietQR tự động • Agribank 7104205433117';
-      } else {
-        charityQrImg.style.display = 'none';
-        qrFallbackBox.style.display = 'block';
       }
     });
 
