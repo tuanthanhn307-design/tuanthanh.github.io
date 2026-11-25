@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nguyễn Tuấn Thanh | 11T2 — Nhiếp ảnh, STEM &amp; Bóng chuyền</title>
-  <meta name="description" content="Trang giới thiệu bản thân của Nguyễn Tuấn Thanh - Học sinh lớp 11T2, Trường THPT Chuyên Bến Tre tại Vĩnh Long. Đam mê Nhiếp ảnh, STEM, Thiết kế 3D &amp; Lập trình sáng tạo và Bóng chuyền (Chuyền hai)." />
+  <meta name="description" content="Trang giới thiệu bản thân của Nguyễn Tuấn Thanh - Học sinh lớp 11T2, Trường THPT Chuyên Bến Tre tại Vĩnh Long. Đam mê Nhiếp ảnh, STEM, Thiết kế 3D &amp; Lập trình sáng tạo và Bóng chuyền (Chuyền 2)." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
@@ -723,7 +723,7 @@
           <span class="highlight-stem">Nguyễn Tuấn Thanh</span>
         </h1>
         <p class="hero-desc">
-          Mình là học sinh lớp <strong>11T2</strong> tại trường <strong>THPT Chuyên Bến Tre (tỉnh Vĩnh Long)</strong>. Mình đam mê kết hợp tư duy logic của <span class="highlight-stem"><strong>STEM</strong></span>, góc nhìn sáng tạo qua ống kính <span class="highlight-photo"><strong>Nhiếp ảnh</strong></span> (<strong>Canon 5D3 + 50mm f/1.8 II</strong> &amp; <strong>Canon M200 + Lens Kit</strong>), <span class="highlight-creative"><strong>Thiết kế 3D &amp; Lập trình sáng tạo</strong></span> cùng tinh thần đồng đội ở vị trí <span class="highlight-volley"><strong>Chuyền hai Bóng chuyền</strong></span>.
+          Mình là học sinh lớp <strong>11T2</strong> tại trường <strong>THPT Chuyên Bến Tre (tỉnh Vĩnh Long)</strong>. Mình đam mê kết hợp tư duy logic của <span class="highlight-stem"><strong>STEM</strong></span>, góc nhìn sáng tạo qua ống kính <span class="highlight-photo"><strong>Nhiếp ảnh</strong></span> (<strong>Canon 5D3 + 50mm f/1.8 II</strong> &amp; <strong>Canon M200 + Lens Kit</strong>), <span class="highlight-creative"><strong>Thiết kế 3D &amp; Lập trình sáng tạo</strong></span> cùng tinh thần đồng đội ở vị trí <span class="highlight-volley"><strong>Chuyền 2 Bóng chuyền</strong></span>.
         </p>
         <div class="cta-group">
           <a href="#ky-nang" class="btn btn-primary">Khám phá năng lực &amp; đam mê</a>
@@ -841,10 +841,10 @@
         <div class="skill-panel volley" id="ky-nang-chuyen-hai">
           <div class="panel-title">
             <span>🏐</span>
-            <span>Kỹ năng Chuyền hai Bóng chuyền</span>
+            <span>Kỹ năng Chuyền 2 Bóng chuyền</span>
           </div>
           <p class="panel-desc">
-            Đảm nhận vai trò <strong>chuyền hai (setter)</strong> trong bóng chuyền — điều phối nhịp độ tấn công và kết nối đồng đội trên sân.
+            Đảm nhận vai trò <strong>Chuyền 2 (setter)</strong> trong bóng chuyền — điều phối nhịp độ tấn công và kết nối đồng đội trên sân.
           </p>
           <ul class="skill-list">
             <li>
@@ -1033,90 +1033,4 @@
       const isDark = htmlEl.getAttribute('data-theme') === 'dark';
       const nextTheme = isDark ? 'light' : 'dark';
       htmlEl.setAttribute('data-theme', nextTheme);
-      themeToggle.textContent = nextTheme === 'dark' ? '☀️ Sáng' : '🌙 Tối';
-    });
-
-    // 4. Mở / đóng menu trên điện thoại
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    function closeMobileMenu() {
-      mobileMenu.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.textContent = '☰';
-    }
-
-    menuToggle.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
-      menuToggle.textContent = isOpen ? '✕' : '☰';
-    });
-
-    mobileMenu.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', closeMobileMenu);
-    });
-
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 820) {
-        closeMobileMenu();
-      }
-    });
-
-    // 5. Hàm sao chép có dự phòng
-    const feedback = document.getElementById('copyFeedback');
-
-    function showFeedback(message) {
-      feedback.textContent = message;
-      clearTimeout(showFeedback.timer);
-      showFeedback.timer = setTimeout(() => {
-        feedback.textContent = '';
-      }, 3000);
-    }
-
-    async function copyTextWithFallback(text, successMsg) {
-      try {
-        if (navigator.clipboard && window.isSecureContext) {
-          await navigator.clipboard.writeText(text);
-          showFeedback(successMsg);
-          return;
-        }
-      } catch (err) {}
-
-      const textarea = document.createElement('textarea');
-      textarea.value = text;
-      textarea.style.position = 'fixed';
-      textarea.style.opacity = '0';
-      document.body.appendChild(textarea);
-      textarea.focus();
-      textarea.select();
-      try {
-        document.execCommand('copy');
-        showFeedback(successMsg);
-      } catch (err) {
-        showFeedback('Không thể tự động sao chép, bạn hãy copy thủ công nhé.');
-      }
-      document.body.removeChild(textarea);
-    }
-
-    const copyBankBtn = document.getElementById('copyBankBtn');
-    if (copyBankBtn) {
-      copyBankBtn.addEventListener('click', () => {
-        copyTextWithFallback(
-          'STK: 7104205433117 | Chủ TK: NGUYEN TUAN THANH | Ngân hàng: Agribank CN H. Bình Đại - Bến Tre',
-          'Đã sao chép thông tin tài khoản từ thiện!'
-        );
-      });
-    }
-
-    const copyInfoBtn = document.getElementById('copyInfoBtn');
-    if (copyInfoBtn) {
-      copyInfoBtn.addEventListener('click', () => {
-        copyTextWithFallback(
-          'Nguyễn Tuấn Thanh — 11T2, THPT Chuyên Bến Tre (Vĩnh Long) | SĐT: 0974093831',
-          'Đã sao chép thông tin liên hệ!'
-        );
-      });
-    }
-  </script>
-</body>
-</html>
+      themeToggle.textContent = nextTheme === 'dark' ? '☀️ Sáng' : '🌙
