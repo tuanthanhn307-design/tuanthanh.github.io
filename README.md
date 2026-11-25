@@ -122,13 +122,13 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 18px;
     }
 
     .nav-links a {
       text-decoration: none;
       color: var(--text-secondary);
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       font-weight: 500;
       transition: color 0.2s ease;
       white-space: nowrap;
@@ -405,14 +405,16 @@
       color: var(--accent-stem);
     }
 
-    /* Skills Bento Grid */
-    .skills-grid {
+    /* Skills & Gear Grids */
+    .skills-grid,
+    .gear-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 24px;
     }
 
-    .skill-panel {
+    .skill-panel,
+    .gear-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: 16px;
@@ -424,8 +426,33 @@
       border-top: 3px solid var(--accent-stem);
     }
 
-    .skill-panel.photo {
+    .skill-panel.photo,
+    .gear-card {
       border-top: 3px solid var(--accent-photo);
+    }
+
+    .gear-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 3px 9px;
+      border-radius: 6px;
+      background: rgba(245, 158, 11, 0.14);
+      color: var(--accent-photo);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      margin-bottom: 10px;
+    }
+
+    .gear-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .gear-lens {
+      font-size: 0.92rem;
+      color: var(--accent-stem);
+      font-weight: 600;
+      margin-bottom: 12px;
     }
 
     .panel-title {
@@ -636,6 +663,7 @@
         <nav class="nav-links" aria-label="Điều hướng chính">
           <a href="#gioi-thieu">Giới thiệu</a>
           <a href="#ky-nang">Kỹ năng</a>
+          <a href="#thiet-bi">Thiết bị</a>
           <a href="#bo-suu-tap">Góc Nhiếp ảnh</a>
           <a href="#tu-thien">Từ thiện</a>
           <a href="#lien-he">Liên hệ</a>
@@ -649,6 +677,7 @@
     <nav class="mobile-menu" id="mobileMenu" aria-label="Điều hướng điện thoại">
       <a href="#gioi-thieu">Giới thiệu</a>
       <a href="#ky-nang">Kỹ năng STEM &amp; Nhiếp ảnh</a>
+      <a href="#thiet-bi">Thiết bị Nhiếp ảnh</a>
       <a href="#bo-suu-tap">Góc Nhiếp ảnh</a>
       <a href="#tu-thien">Mã chuyển khoản từ thiện</a>
       <a href="#lien-he">Liên hệ</a>
@@ -668,10 +697,10 @@
           <span class="highlight-stem">Nguyễn Tuấn Thanh</span>
         </h1>
         <p class="hero-desc">
-          Mình là học sinh lớp <strong>11T2</strong> tại trường <strong>THPT Chuyên Bến Tre (tỉnh Vĩnh Long)</strong>. Mình yêu thích kết hợp tư duy logic của <span class="highlight-stem"><strong>STEM</strong></span> với góc nhìn sáng tạo qua ống kính <span class="highlight-photo"><strong>Nhiếp ảnh</strong></span> (<strong>Canon 5D3 + 50mm f/1.8 II</strong> &amp; <strong>Canon M200 + Lens Kit</strong>).
+          Mình là học sinh lớp <strong>11T2</strong> tại trường <strong>THPT Chuyên Bến Tre (tỉnh Vĩnh Long)</strong>. Mình yêu thích kết hợp tư duy logic của <span class="highlight-stem"><strong>STEM</strong></span> với góc nhìn sáng tạo qua ống kính <span class="highlight-photo"><strong>Nhiếp ảnh</strong></span> với <strong>Canon 5D3 + Lens 50mm f/1.8 II</strong> và <strong>Canon M200 + Lens Kit</strong>.
         </p>
         <div class="cta-group">
-          <a href="#ky-nang" class="btn btn-primary">Khám phá kỹ năng</a>
+          <a href="#thiet-bi" class="btn btn-primary">Xem thiết bị máy ảnh</a>
           <a href="#tu-thien" class="btn btn-outline">Mã chuyển khoản từ thiện</a>
         </div>
       </div>
@@ -679,7 +708,7 @@
       <!-- Viewfinder Portrait Frame -->
       <div class="viewfinder">
         <div class="vf-header mono">
-          <span class="vf-rec">● CANON 5D3 / M200</span>
+          <span class="vf-rec">● 5D3 / M200</span>
           <span>[ 50MM f/1.8 II • KIT ]</span>
           <span>RAW</span>
         </div>
@@ -694,7 +723,7 @@
         <div class="vf-footer mono">
           <span>ISO 100</span>
           <span>f/1.8</span>
-          <span>15-45MM / 50MM</span>
+          <span>50MM / KIT</span>
         </div>
       </div>
     </section>
@@ -764,7 +793,7 @@
             <span>Kỹ năng Nhiếp ảnh</span>
           </div>
           <p class="panel-desc">
-            Sử dụng linh hoạt hai bộ máy <strong>Canon 5D3 + Lens 50mm f/1.8 II</strong> và <strong>Canon M200 + Lens Kit</strong> để ghi lại khoảnh khắc đời sống, thiên nhiên và góc nhìn sáng tạo.
+            Ghi lại khoảnh khắc đời sống, thiên nhiên và góc nhìn nghệ thuật thông qua ánh sáng, bố cục và hậu kỳ.
           </p>
           <ul class="skill-list">
             <li>
@@ -772,8 +801,8 @@
               Áp dụng tỷ lệ khung hình, đường dẫn và tận dụng khẩu độ lớn f/1.8 cùng ánh sáng tự nhiên.
             </li>
             <li>
-              <strong>Chụp ảnh Đời sống &amp; Cơ động (Kit / 50mm)</strong>
-              Dễ dàng chuyển đổi giữa góc rộng đa dụng của <strong>Canon M200 Lens Kit</strong> và xóa phông chân dung với <strong>5D3 + 50mm f/1.8 II</strong>.
+              <strong>Chụp ảnh Đời sống &amp; Sự kiện</strong>
+              Lưu giữ hình ảnh trường lớp, hoạt động tập thể và cảnh sắc quê hương.
             </li>
             <li>
               <strong>Hậu kỳ &amp; Chỉnh màu</strong>
@@ -784,18 +813,52 @@
       </div>
     </section>
 
+    <!-- Camera Gear Section -->
+    <section id="thiet-bi">
+      <div class="section-header">
+        <span class="section-tag mono">// 03. THIẾT BỊ NHIẾP ẢNH</span>
+        <h2 class="section-title">Bộ máy ảnh đang sử dụng</h2>
+      </div>
+      <div class="gear-grid">
+        <div class="gear-card">
+          <span class="gear-tag mono">FULL-FRAME DSLR</span>
+          <h3 class="gear-title">Canon EOS 5D Mark III (5D3)</h3>
+          <div class="gear-lens mono">Ống kính: Lens 50mm f/1.8 II</div>
+          <p class="panel-desc">
+            Thân máy Full-frame kết hợp tiêu cự 50mm khẩu độ f/1.8 II cho chất ảnh nổi khối, làm chủ ánh sáng tốt và xóa phông chân dung mượt mà.
+          </p>
+        </div>
+
+        <div class="gear-card">
+          <span class="gear-tag mono">COMPACT MIRRORLESS</span>
+          <h3 class="gear-title">Canon EOS M200</h3>
+          <div class="gear-lens mono">Ống kính: Lens Kit</div>
+          <p class="panel-desc">
+            Máy ảnh nhỏ gọn, cơ động kết hợp Lens Kit đa dụng, thuận tiện mang theo hằng ngày để ghi lại khoảnh khắc nhanh gọn, linh hoạt.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- Gallery Section -->
     <section id="bo-suu-tap">
       <div class="section-header">
-        <span class="section-tag mono">// 03. GÓC LƯU TRỮ</span>
+        <span class="section-tag mono">// 04. GÓC LƯU TRỮ</span>
         <h2 class="section-title">Khoảnh khắc Nhiếp ảnh &amp; STEM</h2>
       </div>
       <div class="gallery-grid">
         <div class="photo-card">
-          <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80" alt="Góc máy nhiếp ảnh Canon 5D3 50mm f/1.8 II" />
+          <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80" alt="Canon 5D3 và Lens 50mm f/1.8 II" />
           <div class="photo-overlay">
             <span class="photo-meta mono">CANON 5D3 • 50MM f/1.8 II</span>
             <div class="photo-caption">Chân dung &amp; chiều sâu trường ảnh</div>
+          </div>
+        </div>
+        <div class="photo-card">
+          <img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=800&q=80" alt="Canon M200 và Lens Kit" />
+          <div class="photo-overlay">
+            <span class="photo-meta mono">CANON M200 • LENS KIT</span>
+            <div class="photo-caption">Ghi hình gọn nhẹ mọi hành trình</div>
           </div>
         </div>
         <div class="photo-card">
@@ -812,20 +875,13 @@
             <div class="photo-caption">Sắc màu ánh sáng tự nhiên</div>
           </div>
         </div>
-        <div class="photo-card">
-          <img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=800&q=80" alt="Máy ảnh gọn nhẹ Canon M200 Lens Kit" />
-          <div class="photo-overlay">
-            <span class="photo-meta mono">CANON M200 • LENS KIT</span>
-            <div class="photo-caption">Ghi hình gọn nhẹ mọi hành trình</div>
-          </div>
-        </div>
       </div>
     </section>
 
     <!-- Charity QR Section -->
     <section id="tu-thien">
       <div class="section-header">
-        <span class="section-tag mono" style="color: var(--accent-charity);">// 04. ĐÓNG GÓP &amp; TỪ THIỆN</span>
+        <span class="section-tag mono" style="color: var(--accent-charity);">// 05. ĐÓNG GÓP &amp; TỪ THIỆN</span>
         <h2 class="section-title">Mã chuyển khoản từ thiện</h2>
       </div>
       <div class="charity-grid">
@@ -854,7 +910,7 @@
     <!-- Contact Section -->
     <section id="lien-he">
       <div class="contact-box">
-        <span class="section-tag mono">// 05. KẾT NỐI</span>
+        <span class="section-tag mono">// 06. KẾT NỐI</span>
         <h2 class="section-title">Cùng giao lưu về Nhiếp ảnh &amp; STEM</h2>
         <p>
           Liên hệ trực tiếp qua số điện thoại <strong>0974093831</strong>, sao chép nhanh thông tin giới thiệu hoặc ghé thăm GitHub để cùng trao đổi nhé!
@@ -965,4 +1021,21 @@
         }
         showFeedback(successMsg);
       } catch (err) {
-        showFeedback('Không thể tự động sao chép, bạn hãy copy thủ công
+        showFeedback('Không thể tự động sao chép, bạn hãy copy thủ công nhé.');
+      }
+    }
+
+    const copyInfoBtn = document.getElementById('copyInfoBtn');
+    const bioText = 'Nguyễn Tuấn Thanh - Học sinh lớp 11T2, Trường THPT Chuyên Bến Tre (tỉnh Vĩnh Long). Đam mê Nhiếp ảnh (Canon 5D3 + Lens 50mm f/1.8 II & Canon M200 + Lens Kit) & STEM. SĐT: 0974093831.';
+    copyInfoBtn.addEventListener('click', () => {
+      copyTextWithFallback(bioText, '✓ Đã sao chép thông tin và số điện thoại vào bộ nhớ tạm!');
+    });
+
+    const copyBankBtn = document.getElementById('copyBankBtn');
+    const bankText = 'NGUYEN TUAN THANH - STK: 7104205433117 - Agribank Chi nhánh H. Bình Đại - Bến Tre';
+    copyBankBtn.addEventListener('click', () => {
+      copyTextWithFallback(bankText, '✓ Đã sao chép thông tin tài khoản từ thiện Agribank!');
+    });
+  </script>
+</body>
+</html>
