@@ -924,6 +924,13 @@
       </div>
       <div class="gallery-grid">
         <div class="photo-card">
+          <img src="images/anh-cuu.jpg" alt="Khoảnh khắc vui nhộn ngoài trời cùng cừu của Nguyễn Tuấn Thanh" style="object-position: center 25%;" />
+          <div class="photo-overlay">
+            <span class="photo-meta mono">11T2 • KHOẢNH KHẮC</span>
+            <div class="photo-caption">Khoảnh khắc vui nhộn ngoài trời</div>
+          </div>
+        </div>
+        <div class="photo-card">
           <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80" alt="Canon 5D3 và Lens 50mm f/1.8 II" />
           <div class="photo-overlay">
             <span class="photo-meta mono">CANON 5D3 • 50MM f/1.8 II</span>
