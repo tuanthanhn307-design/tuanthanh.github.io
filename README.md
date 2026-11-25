@@ -1,15 +1,4 @@
-<div class="photo-card">
-          <img src="images/anh-cuu.jpg" alt="Khoảnh khắc vui nhộn ngoài trời cùng cừu của Nguyễn Tuấn Thanh" style="object-position: center 25%;" />
-          <div class="photo-overlay">
-            <span class="photo-meta mono">11T2 • KHOẢNH KHẮC</span>
-            <div class="photo-caption">Khoảnh khắc vui nhộn ngoài trời</div>
-          </div>
-        </div>
-```[cite: 7, 9]
 
-### Code HTML hoàn chỉnh đã xóa mục đó:
-
-```html
 <!DOCTYPE html>
 <html lang="vi" data-theme="dark">
 <head>
