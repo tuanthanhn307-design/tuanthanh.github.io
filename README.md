@@ -336,8 +336,19 @@
 
     .avatar-placeholder {
       text-align: center;
-      padding: 20px;
+      padding: 22px;
       color: #e2e8f0;
+    }
+
+    .placeholder-badge {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 5px 10px;
+      border-radius: 6px;
+      background: rgba(56, 189, 248, 0.16);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #7dd3fc;
+      font-size: 0.78rem;
     }
 
     .crosshair {
@@ -539,10 +550,12 @@
     .qr-frame {
       background: #ffffff;
       border-radius: 14px;
-      padding: 12px;
+      padding: 14px;
       max-width: 280px;
+      width: 100%;
       margin: 0 auto;
       border: 1px solid var(--border-color);
+      text-align: center;
     }
 
     .qr-frame img {
@@ -550,6 +563,20 @@
       height: auto;
       display: block;
       border-radius: 8px;
+    }
+
+    .qr-fallback-box {
+      padding: 20px 12px;
+      color: #0f172a;
+      background: #f1f5f9;
+      border-radius: 10px;
+      border: 1px dashed #94a3b8;
+    }
+
+    .qr-note {
+      font-size: 0.74rem;
+      color: #475569;
+      margin-top: 8px;
     }
 
     .bank-details {
@@ -695,11 +722,12 @@
             alt="Ảnh đại diện Nguyễn Tuấn Thanh"
           />
           <div class="avatar-placeholder" id="avatarPlaceholder">
-            <p class="mono" style="font-size: 2rem; margin-bottom: 8px;">📷</p>
-            <strong>Ảnh đại diện của bạn</strong>
+            <p class="mono" style="font-size: 2.2rem; margin-bottom: 8px;">📷</p>
+            <strong>Chưa có ảnh đại diện</strong>
             <p style="font-size: 0.84rem; margin-top: 6px; color: #cbd5e1;">
-              Tải ảnh lên <code class="mono">images/anh-dai-dien.jpg</code> trên GitHub để hiển thị tại đây.
+              Tải ảnh chân dung của bạn lên GitHub với đường dẫn bên dưới để hiển thị:
             </p>
+            <div class="placeholder-badge mono">images/anh-dai-dien.jpg</div>
           </div>
           <div class="crosshair"></div>
         </div>
@@ -835,7 +863,19 @@
       </div>
       <div class="charity-grid">
         <div class="qr-frame">
-          <img src="images/qr-tu-thien.jpg" alt="Mã QR chuyển khoản từ thiện Agribank Nguyễn Tuấn Thanh" />
+          <img
+            id="charityQrImg"
+            src="images/qr-tu-thien.jpg"
+            alt="Mã QR chuyển khoản từ thiện Agribank Nguyễn Tuấn Thanh"
+          />
+          <div class="qr-fallback-box" id="qrFallbackBox" style="display: none;">
+            <p style="font-size: 1.8rem; margin-bottom: 6px;">🏦</p>
+            <strong style="font-size: 0.92rem;">Chưa có ảnh QR cá nhân</strong>
+            <p style="font-size: 0.78rem; color: #475569; margin-top: 4px;">
+              Tải ảnh mã QR lên <code class="mono">images/qr-tu-thien.jpg</code> hoặc chuyển khoản theo thông tin bên cạnh.
+            </p>
+          </div>
+          <div class="qr-note mono" id="qrStatusNote">VietQR • Agribank — 7104205433117</div>
         </div>
         <div>
           <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Quét mã VietQR qua ứng dụng Ngân hàng</h3>
@@ -877,7 +917,7 @@
   </footer>
 
   <script>
-    // Xử lý hiển thị ảnh đại diện hoặc khung placeholder nếu ảnh chưa tồn tại
+    // 1. Xử lý hiển thị ảnh đại diện hoặc khung nhắc nếu chưa có file images/anh-dai-dien.jpg
     const avatarImg = document.getElementById('avatarImg');
     const avatarPlaceholder = document.getElementById('avatarPlaceholder');
 
@@ -895,7 +935,25 @@
     avatarImg.addEventListener('error', syncAvatarState);
     syncAvatarState();
 
-    // Chuyển đổi chế độ Sáng / Tối
+    // 2. Xử lý ảnh QR từ thiện: ưu tiên images/qr-tu-thien.jpg, nếu chưa có thì tự động tải mã VietQR Agribank
+    const charityQrImg = document.getElementById('charityQrImg');
+    const qrFallbackBox = document.getElementById('qrFallbackBox');
+    const qrStatusNote = document.getElementById('qrStatusNote');
+    const vietQrFallbackUrl = 'https://img.vietqr.io/image/VBA-7104205433117-compact2.png?accountName=NGUYEN%20TUAN%20THANH';
+    let qrFallbackTried = false;
+
+    charityQrImg.addEventListener('error', () => {
+      if (!qrFallbackTried) {
+        qrFallbackTried = true;
+        charityQrImg.src = vietQrFallbackUrl;
+        qrStatusNote.textContent = 'Mã VietQR tự động • Agribank 7104205433117';
+      } else {
+        charityQrImg.style.display = 'none';
+        qrFallbackBox.style.display = 'block';
+      }
+    });
+
+    // 3. Chuyển đổi chế độ Sáng / Tối
     const themeToggle = document.getElementById('themeToggle');
     const htmlEl = document.documentElement;
 
@@ -906,7 +964,7 @@
       themeToggle.textContent = nextTheme === 'dark' ? '☀️ Sáng' : '🌙 Tối';
     });
 
-    // Mở / đóng menu trên điện thoại
+    // 4. Mở / đóng menu trên điện thoại
     const menuToggle = document.getElementById('menuToggle');
     const mobileMenu = document.getElementById('mobileMenu');
 
@@ -932,7 +990,7 @@
       }
     });
 
-    // Hàm sao chép có dự phòng
+    // 5. Hàm sao chép có dự phòng
     const feedback = document.getElementById('copyFeedback');
 
     function showFeedback(message) {
