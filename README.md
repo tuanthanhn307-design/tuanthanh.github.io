@@ -1053,3 +1053,70 @@
     });
 
     mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 820) {
+        closeMobileMenu();
+      }
+    });
+
+    // 5. Hàm sao chép có dự phòng
+    const feedback = document.getElementById('copyFeedback');
+
+    function showFeedback(message) {
+      feedback.textContent = message;
+      clearTimeout(showFeedback.timer);
+      showFeedback.timer = setTimeout(() => {
+        feedback.textContent = '';
+      }, 3000);
+    }
+
+    async function copyTextWithFallback(text, successMsg) {
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          showFeedback(successMsg);
+          return;
+        }
+      } catch (err) {}
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        showFeedback(successMsg);
+      } catch (err) {
+        showFeedback('Không thể tự động sao chép, bạn hãy copy thủ công nhé.');
+      }
+      document.body.removeChild(textarea);
+    }
+
+    const copyBankBtn = document.getElementById('copyBankBtn');
+    if (copyBankBtn) {
+      copyBankBtn.addEventListener('click', () => {
+        copyTextWithFallback(
+          'STK: 7104205433117 | Chủ TK: NGUYEN TUAN THANH | Ngân hàng: Agribank CN H. Bình Đại - Bến Tre',
+          'Đã sao chép thông tin tài khoản từ thiện!'
+        );
+      });
+    }
+
+    const copyInfoBtn = document.getElementById('copyInfoBtn');
+    if (copyInfoBtn) {
+      copyInfoBtn.addEventListener('click', () => {
+        copyTextWithFallback(
+          'Nguyễn Tuấn Thanh — 11T2, THPT Chuyên Bến Tre (Vĩnh Long) | SĐT: 0974093831',
+          'Đã sao chép thông tin liên hệ!'
+        );
+      });
+    }
+  </script>
+</body>
+</html>
