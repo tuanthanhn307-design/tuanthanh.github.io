@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nguyễn Tuấn Thanh | 11T2 — Nhiếp ảnh, STEM &amp; Bóng chuyền</title>
-  <meta name="description" content="Trang giới thiệu bản thân của Nguyễn Tuấn Thanh - Học sinh lớp 11T2, Trường THPT Chuyên Bến Tre tại Vĩnh Long. Đam mê Nhiếp ảnh, STEM và Bóng chuyền (Chuyền hai)." />
+  <meta name="description" content="Trang giới thiệu bản thân của Nguyễn Tuấn Thanh - Học sinh lớp 11T2, Trường THPT Chuyên Bến Tre tại Vĩnh Long. Đam mê Nhiếp ảnh, STEM, Thiết kế 3D &amp; Lập trình sáng tạo và Bóng chuyền (Chuyền hai)." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
@@ -20,6 +20,7 @@
       --accent-stem: #38bdf8;
       --accent-photo: #f59e0b;
       --accent-volley: #a78bfa;
+      --accent-creative: #fb7185;
       --accent-charity: #34d399;
       --border-color: rgba(148, 163, 184, 0.16);
       --grid-color: rgba(56, 189, 248, 0.05);
@@ -36,6 +37,7 @@
       --accent-stem: #0284c7;
       --accent-photo: #d97706;
       --accent-volley: #7c3aed;
+      --accent-creative: #e11d48;
       --accent-charity: #059669;
       --border-color: rgba(15, 23, 42, 0.12);
       --grid-color: rgba(2, 132, 199, 0.06);
@@ -246,6 +248,10 @@
       color: var(--accent-volley);
     }
 
+    .highlight-creative {
+      color: var(--accent-creative);
+    }
+
     .hero-desc {
       color: var(--text-secondary);
       font-size: 1.03rem;
@@ -414,7 +420,7 @@
     /* Skills & Gear Grids */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 24px;
     }
 
@@ -444,6 +450,10 @@
 
     .skill-panel.volley {
       border-top: 3px solid var(--accent-volley);
+    }
+
+    .skill-panel.creative {
+      border-top: 3px solid var(--accent-creative);
     }
 
     .gear-tag {
@@ -647,14 +657,9 @@
       font-size: 0.88rem;
     }
 
-    @media (max-width: 900px) {
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
     @media (max-width: 820px) {
       .hero,
+      .skills-grid,
       .charity-grid {
         grid-template-columns: 1fr;
         padding-top: 32px;
@@ -697,7 +702,7 @@
     <!-- Mobile Navigation Drawer -->
     <nav class="mobile-menu" id="mobileMenu" aria-label="Điều hướng điện thoại">
       <a href="#gioi-thieu">Giới thiệu</a>
-      <a href="#ky-nang">Kỹ năng &amp; Bóng chuyền</a>
+      <a href="#ky-nang">Năng lực &amp; Đam mê</a>
       <a href="#thiet-bi">Thiết bị Nhiếp ảnh</a>
       <a href="#bo-suu-tap">Góc Nhiếp ảnh</a>
       <a href="#tu-thien">Mã chuyển khoản từ thiện</a>
@@ -718,10 +723,10 @@
           <span class="highlight-stem">Nguyễn Tuấn Thanh</span>
         </h1>
         <p class="hero-desc">
-          Mình là học sinh lớp <strong>11T2</strong> tại trường <strong>THPT Chuyên Bến Tre (tỉnh Vĩnh Long)</strong>. Mình yêu thích kết hợp tư duy logic của <span class="highlight-stem"><strong>STEM</strong></span>, góc nhìn sáng tạo qua ống kính <span class="highlight-photo"><strong>Nhiếp ảnh</strong></span> (<strong>Canon 5D3 + 50mm f/1.8 II</strong> &amp; <strong>Canon M200 + Lens Kit</strong>) cùng tinh thần đồng đội ở vị trí <span class="highlight-volley"><strong>Chuyền hai Bóng chuyền</strong></span>.
+          Mình là học sinh lớp <strong>11T2</strong> tại trường <strong>THPT Chuyên Bến Tre (tỉnh Vĩnh Long)</strong>. Mình đam mê kết hợp tư duy logic của <span class="highlight-stem"><strong>STEM</strong></span>, góc nhìn sáng tạo qua ống kính <span class="highlight-photo"><strong>Nhiếp ảnh</strong></span> (<strong>Canon 5D3 + 50mm f/1.8 II</strong> &amp; <strong>Canon M200 + Lens Kit</strong>), <span class="highlight-creative"><strong>Thiết kế 3D &amp; Lập trình sáng tạo</strong></span> cùng tinh thần đồng đội ở vị trí <span class="highlight-volley"><strong>Chuyền hai Bóng chuyền</strong></span>.
         </p>
         <div class="cta-group">
-          <a href="#ky-nang" class="btn btn-primary">Khám phá kỹ năng</a>
+          <a href="#ky-nang" class="btn btn-primary">Khám phá năng lực &amp; đam mê</a>
           <a href="#tu-thien" class="btn btn-outline">Mã chuyển khoản từ thiện</a>
         </div>
       </div>
@@ -779,7 +784,7 @@
     <section id="ky-nang">
       <div class="section-header">
         <span class="section-tag mono">// 02. NĂNG LỰC &amp; ĐAM MÊ</span>
-        <h2 class="section-title">Kỹ năng STEM, Nhiếp ảnh &amp; Chuyền hai Bóng chuyền</h2>
+        <h2 class="section-title">Năng lực &amp; Đam mê nổi bật</h2>
       </div>
       <div class="skills-grid">
         <!-- STEM Card -->
@@ -856,6 +861,31 @@
             </li>
           </ul>
         </div>
+
+        <!-- Creative 3D & Coding Card -->
+        <div class="skill-panel creative" id="nang-luc-sang-tao">
+          <div class="panel-title">
+            <span>🧊</span>
+            <span>Thiết kế 3D &amp; Lập trình sáng tạo</span>
+          </div>
+          <p class="panel-desc">
+            Kết hợp mô hình hóa 3D, script tự động hóa và giao diện web tương tác để biến ý tưởng trực quan thành sản phẩm số.
+          </p>
+          <ul class="skill-list">
+            <li>
+              <strong>Dựng hình &amp; Kịch bản 3D</strong>
+              Tạo hình khối, không gian và ánh sáng cho các mô hình kiến trúc, phương tiện và sản phẩm mẫu.
+            </li>
+            <li>
+              <strong>Tự động hóa &amp; Viết mã hỗ trợ</strong>
+              Viết đoạn mã gọn nhẹ để sinh mô hình, kiểm thử mạch/thiết bị và tối ưu thao tác.
+            </li>
+            <li>
+              <strong>Trình bày trực quan &amp; Kể chuyện</strong>
+              Xây dựng trang web, slide và nội dung sinh động giúp ý tưởng dễ tiếp cận với mọi người.
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -912,13 +942,6 @@
           <div class="photo-overlay">
             <span class="photo-meta mono">STEM LAB • HARDWARE</span>
             <div class="photo-caption">Khám phá mạch điện tử &amp; công nghệ</div>
-          </div>
-        </div>
-        <div class="photo-card">
-          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80" alt="Ánh sáng hoàng hôn" />
-          <div class="photo-overlay">
-            <span class="photo-meta mono">GOLDEN HOUR • ISO 100</span>
-            <div class="photo-caption">Sắc màu ánh sáng tự nhiên</div>
           </div>
         </div>
       </div>
@@ -1054,34 +1077,46 @@
       try {
         if (navigator.clipboard && window.isSecureContext) {
           await navigator.clipboard.writeText(text);
-        } else {
-          const tempInput = document.createElement('textarea');
-          tempInput.value = text;
-          tempInput.setAttribute('readonly', '');
-          tempInput.style.position = 'absolute';
-          tempInput.style.left = '-9999px';
-          document.body.appendChild(tempInput);
-          tempInput.select();
-          document.execCommand('copy');
-          document.body.removeChild(tempInput);
+          showFeedback(successMsg);
+          return;
         }
+      } catch (err) {}
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      try {
+        document.execCommand('copy');
         showFeedback(successMsg);
       } catch (err) {
         showFeedback('Không thể tự động sao chép, bạn hãy copy thủ công nhé.');
       }
+      document.body.removeChild(textarea);
+    }
+
+    const copyBankBtn = document.getElementById('copyBankBtn');
+    if (copyBankBtn) {
+      copyBankBtn.addEventListener('click', () => {
+        copyTextWithFallback(
+          'STK: 7104205433117 | Chủ TK: NGUYEN TUAN THANH | Ngân hàng: Agribank CN H. Bình Đại - Bến Tre',
+          'Đã sao chép thông tin tài khoản từ thiện!'
+        );
+      });
     }
 
     const copyInfoBtn = document.getElementById('copyInfoBtn');
-    const bioText = 'Nguyễn Tuấn Thanh - Học sinh lớp 11T2, Trường THPT Chuyên Bến Tre (tỉnh Vĩnh Long). Đam mê Nhiếp ảnh (Canon 5D3 + 50mm f/1.8 II & Canon M200 + Lens Kit), STEM & Chuyền hai Bóng chuyền. SĐT: 0974093831.';
-    copyInfoBtn.addEventListener('click', () => {
-      copyTextWithFallback(bioText, '✓ Đã sao chép thông tin và số điện thoại vào bộ nhớ tạm!');
-    });
-
-    const copyBankBtn = document.getElementById('copyBankBtn');
-    const bankText = 'NGUYEN TUAN THANH - STK: 7104205433117 - Agribank Chi nhánh H. Bình Đại - Bến Tre';
-    copyBankBtn.addEventListener('click', () => {
-      copyTextWithFallback(bankText, '✓ Đã sao chép thông tin tài khoản từ thiện Agribank!');
-    });
+    if (copyInfoBtn) {
+      copyInfoBtn.addEventListener('click', () => {
+        copyTextWithFallback(
+          'Nguyễn Tuấn Thanh — 11T2, THPT Chuyên Bến Tre (Vĩnh Long) | SĐT: 0974093831',
+          'Đã sao chép thông tin liên hệ!'
+        );
+      });
+    }
   </script>
 </body>
 </html>
