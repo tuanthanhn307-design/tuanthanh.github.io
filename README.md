@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi" data-theme="dark">
 <head>
@@ -1121,3 +1120,6 @@
   </script>
 </body>
 </html>
+```[cite: 3]
+
+Bạn đã tải file `anh-dai-dien.jpg` lên thư mục `images/` trên GitHub chưa hay cần mình hỗ trợ thêm phần nào khác?
