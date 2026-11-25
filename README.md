@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nguyễn Tuấn Thanh | 11T2 — Nhiếp ảnh &amp; STEM</title>
-  <meta name="description" content="Trang giới thiệu bản thân của Nguyễn Tuấn Thanh - Học sinh lớp 11T2, Trường THPT Chuyên Bến Tre tại Vĩnh Long. Đam mê Nhiếp ảnh và STEM." />
+  <meta name="description" content="Trang giới thiệu bản thân của Nguyễn Tuấn Thanh - Học sinh lớp 11T2, Trường THPT Chuyên Bến Tre tại Vĩnh Long. Đam mê Nhiếp ảnh và STEM với Canon 5D3 50mm f/1.8 II &amp; Canon M200 Lens Kit." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
@@ -668,7 +668,7 @@
           <span class="highlight-stem">Nguyễn Tuấn Thanh</span>
         </h1>
         <p class="hero-desc">
-          Mình là học sinh lớp <strong>11T2</strong> tại trường <strong>THPT Chuyên Bến Tre (tỉnh Vĩnh Long)</strong>. Mình yêu thích kết hợp tư duy logic của <span class="highlight-stem"><strong>STEM</strong></span> với góc nhìn sáng tạo qua ống kính <span class="highlight-photo"><strong>Nhiếp ảnh</strong></span>.
+          Mình là học sinh lớp <strong>11T2</strong> tại trường <strong>THPT Chuyên Bến Tre (tỉnh Vĩnh Long)</strong>. Mình yêu thích kết hợp tư duy logic của <span class="highlight-stem"><strong>STEM</strong></span> với góc nhìn sáng tạo qua ống kính <span class="highlight-photo"><strong>Nhiếp ảnh</strong></span> (<strong>Canon 5D3 + 50mm f/1.8 II</strong> &amp; <strong>Canon M200 + Lens Kit</strong>).
         </p>
         <div class="cta-group">
           <a href="#ky-nang" class="btn btn-primary">Khám phá kỹ năng</a>
@@ -679,9 +679,9 @@
       <!-- Viewfinder Portrait Frame -->
       <div class="viewfinder">
         <div class="vf-header mono">
-          <span class="vf-rec">● REC</span>
-          <span>[ AF-C • RAW ]</span>
-          <span>100%</span>
+          <span class="vf-rec">● CANON 5D3 / M200</span>
+          <span>[ 50MM f/1.8 II • KIT ]</span>
+          <span>RAW</span>
         </div>
         <div class="avatar-box">
           <img
@@ -694,7 +694,7 @@
         <div class="vf-footer mono">
           <span>ISO 100</span>
           <span>f/1.8</span>
-          <span>1/500s</span>
+          <span>15-45MM / 50MM</span>
         </div>
       </div>
     </section>
@@ -764,16 +764,16 @@
             <span>Kỹ năng Nhiếp ảnh</span>
           </div>
           <p class="panel-desc">
-            Ghi lại những khoảnh khắc đời sống, thiên nhiên và góc nhìn nghệ thuật thông qua ánh sáng và bố cục.
+            Sử dụng linh hoạt hai bộ máy <strong>Canon 5D3 + Lens 50mm f/1.8 II</strong> và <strong>Canon M200 + Lens Kit</strong> để ghi lại khoảnh khắc đời sống, thiên nhiên và góc nhìn sáng tạo.
           </p>
           <ul class="skill-list">
             <li>
               <strong>Bố cục &amp; Ánh sáng</strong>
-              Áp dụng tỷ lệ khung hình, đường dẫn và tận dụng ánh sáng tự nhiên hiệu quả.
+              Áp dụng tỷ lệ khung hình, đường dẫn và tận dụng khẩu độ lớn f/1.8 cùng ánh sáng tự nhiên.
             </li>
             <li>
-              <strong>Chụp ảnh Đời sống &amp; Phong cảnh</strong>
-              Lưu giữ hình ảnh trường lớp, hoạt động tập thể và cảnh sắc quê hương.
+              <strong>Chụp ảnh Đời sống &amp; Cơ động (Kit / 50mm)</strong>
+              Dễ dàng chuyển đổi giữa góc rộng đa dụng của <strong>Canon M200 Lens Kit</strong> và xóa phông chân dung với <strong>5D3 + 50mm f/1.8 II</strong>.
             </li>
             <li>
               <strong>Hậu kỳ &amp; Chỉnh màu</strong>
@@ -792,10 +792,10 @@
       </div>
       <div class="gallery-grid">
         <div class="photo-card">
-          <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80" alt="Góc máy nhiếp ảnh" />
+          <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80" alt="Góc máy nhiếp ảnh Canon 5D3 50mm f/1.8 II" />
           <div class="photo-overlay">
-            <span class="photo-meta mono">PHOTOGRAPHY • 35MM f/1.8</span>
-            <div class="photo-caption">Góc nhìn qua ống kính</div>
+            <span class="photo-meta mono">CANON 5D3 • 50MM f/1.8 II</span>
+            <div class="photo-caption">Chân dung &amp; chiều sâu trường ảnh</div>
           </div>
         </div>
         <div class="photo-card">
@@ -810,6 +810,13 @@
           <div class="photo-overlay">
             <span class="photo-meta mono">GOLDEN HOUR • ISO 100</span>
             <div class="photo-caption">Sắc màu ánh sáng tự nhiên</div>
+          </div>
+        </div>
+        <div class="photo-card">
+          <img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=800&q=80" alt="Máy ảnh gọn nhẹ Canon M200 Lens Kit" />
+          <div class="photo-overlay">
+            <span class="photo-meta mono">CANON M200 • LENS KIT</span>
+            <div class="photo-caption">Ghi hình gọn nhẹ mọi hành trình</div>
           </div>
         </div>
       </div>
@@ -958,21 +965,4 @@
         }
         showFeedback(successMsg);
       } catch (err) {
-        showFeedback('Không thể tự động sao chép, bạn hãy copy thủ công nhé.');
-      }
-    }
-
-    const copyInfoBtn = document.getElementById('copyInfoBtn');
-    const bioText = 'Nguyễn Tuấn Thanh - Học sinh lớp 11T2, Trường THPT Chuyên Bến Tre (tỉnh Vĩnh Long). Đam mê Nhiếp ảnh & STEM. SĐT: 0974093831.';
-    copyInfoBtn.addEventListener('click', () => {
-      copyTextWithFallback(bioText, '✓ Đã sao chép thông tin và số điện thoại vào bộ nhớ tạm!');
-    });
-
-    const copyBankBtn = document.getElementById('copyBankBtn');
-    const bankText = 'NGUYEN TUAN THANH - STK: 7104205433117 - Agribank Chi nhánh H. Bình Đại - Bến Tre';
-    copyBankBtn.addEventListener('click', () => {
-      copyTextWithFallback(bankText, '✓ Đã sao chép thông tin tài khoản từ thiện Agribank!');
-    });
-  </script>
-</body>
-</html>
+        showFeedback('Không thể tự động sao chép, bạn hãy copy thủ công
