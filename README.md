@@ -412,10 +412,15 @@
     }
 
     /* Skills & Gear Grids */
-    .skills-grid,
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
     .gear-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 24px;
     }
 
@@ -466,7 +471,7 @@
     }
 
     .panel-title {
-      font-size: 1.22rem;
+      font-size: 1.2rem;
       font-weight: 700;
       margin-bottom: 10px;
       display: flex;
@@ -642,6 +647,12 @@
       font-size: 0.88rem;
     }
 
+    @media (max-width: 900px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 820px) {
       .hero,
       .charity-grid {
@@ -768,7 +779,7 @@
     <section id="ky-nang">
       <div class="section-header">
         <span class="section-tag mono">// 02. NĂNG LỰC &amp; ĐAM MÊ</span>
-        <h2 class="section-title">Kỹ năng STEM, Nhiếp ảnh &amp; Bóng chuyền</h2>
+        <h2 class="section-title">Kỹ năng STEM, Nhiếp ảnh &amp; Chuyền hai Bóng chuyền</h2>
       </div>
       <div class="skills-grid">
         <!-- STEM Card -->
@@ -822,15 +833,164 @@
         </div>
 
         <!-- Volleyball Setter Card -->
-        <div class="skill-panel volley">
+        <div class="skill-panel volley" id="ky-nang-chuyen-hai">
           <div class="panel-title">
             <span>🏐</span>
-            <span>Bóng chuyền — Chuyền hai (Setter)</span>
+            <span>Kỹ năng Chuyền hai Bóng chuyền</span>
           </div>
           <p class="panel-desc">
-            Điều phối nhịp độ tấn công, giữ sự bình tĩnh trên sân và kết nối đồng đội trong từng pha bóng.
+            Đảm nhận vai trò <strong>chuyền hai (setter)</strong> trong bóng chuyền — điều phối nhịp độ tấn công và kết nối đồng đội trên sân.
           </p>
           <ul class="skill-list">
             <li>
-              <strong>Đệm bóng &amp; Chuyền bóng chuẩn xác</strong>
-              Kiểm soát điểm rơi, độ cao và tốc độ bóng để tạo thuận lợi cho tay
+              <strong>Chuyền bóng chuẩn xác &amp; Ổn định nhịp</strong>
+              Kiểm soát lực, độ cao và điểm rơi để tạo đà tấn công thuận lợi cho đồng đội.
+            </li>
+            <li>
+              <strong>Đọc tình huống &amp; Điều phối lối chơi</strong>
+              Quan sát hàng chắn đối phương, phân phối bóng linh hoạt và giữ nhịp đội hình.
+            </li>
+            <li>
+              <strong>Phản xạ &amp; Giao tiếp đồng đội</strong>
+              Di chuyển bọc lót nhanh nhẹn, phối hợp ăn ý và giữ tinh thần gắn kết toàn đội.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Camera Gear Section -->
+    <section id="thiet-bi">
+      <div class="section-header">
+        <span class="section-tag mono">// 03. THIẾT BỊ NHIẾP ẢNH</span>
+        <h2 class="section-title">Bộ máy ảnh đang sử dụng</h2>
+      </div>
+      <div class="gear-grid">
+        <div class="gear-card">
+          <span class="gear-tag mono">FULL-FRAME DSLR</span>
+          <h3 class="gear-title">Canon EOS 5D Mark III (5D3)</h3>
+          <div class="gear-lens mono">Ống kính: Lens 50mm f/1.8 II</div>
+          <p class="panel-desc">
+            Thân máy Full-frame kết hợp tiêu cự 50mm khẩu độ f/1.8 II cho chất ảnh nổi khối, làm chủ ánh sáng tốt và xóa phông chân dung mượt mà.
+          </p>
+        </div>
+
+        <div class="gear-card">
+          <span class="gear-tag mono">COMPACT MIRRORLESS</span>
+          <h3 class="gear-title">Canon EOS M200</h3>
+          <div class="gear-lens mono">Ống kính: Lens Kit</div>
+          <p class="panel-desc">
+            Máy ảnh nhỏ gọn, cơ động kết hợp Lens Kit đa dụng, thuận tiện mang theo hằng ngày để ghi lại khoảnh khắc nhanh gọn, linh hoạt.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="bo-suu-tap">
+      <div class="section-header">
+        <span class="section-tag mono">// 04. GÓC LƯU TRỮ</span>
+        <h2 class="section-title">Khoảnh khắc Nhiếp ảnh &amp; STEM</h2>
+      </div>
+      <div class="gallery-grid">
+        <div class="photo-card">
+          <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80" alt="Canon 5D3 và Lens 50mm f/1.8 II" />
+          <div class="photo-overlay">
+            <span class="photo-meta mono">CANON 5D3 • 50MM f/1.8 II</span>
+            <div class="photo-caption">Chân dung &amp; chiều sâu trường ảnh</div>
+          </div>
+        </div>
+        <div class="photo-card">
+          <img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=800&q=80" alt="Canon M200 và Lens Kit" />
+          <div class="photo-overlay">
+            <span class="photo-meta mono">CANON M200 • LENS KIT</span>
+            <div class="photo-caption">Ghi hình gọn nhẹ mọi hành trình</div>
+          </div>
+        </div>
+        <div class="photo-card">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Mạch điện tử STEM" />
+          <div class="photo-overlay">
+            <span class="photo-meta mono">STEM LAB • HARDWARE</span>
+            <div class="photo-caption">Khám phá mạch điện tử &amp; công nghệ</div>
+          </div>
+        </div>
+        <div class="photo-card">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80" alt="Ánh sáng hoàng hôn" />
+          <div class="photo-overlay">
+            <span class="photo-meta mono">GOLDEN HOUR • ISO 100</span>
+            <div class="photo-caption">Sắc màu ánh sáng tự nhiên</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Charity QR Section -->
+    <section id="tu-thien">
+      <div class="section-header">
+        <span class="section-tag mono" style="color: var(--accent-charity);">// 05. ĐÓNG GÓP &amp; TỪ THIỆN</span>
+        <h2 class="section-title">Mã chuyển khoản từ thiện</h2>
+      </div>
+      <div class="charity-grid">
+        <div class="qr-frame">
+          <img
+            id="charityQrImg"
+            src="images/qr-tu-thien.jpg"
+            alt="Mã QR chuyển khoản từ thiện Agribank Nguyễn Tuấn Thanh"
+          />
+        </div>
+        <div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 8px;">Quét mã VietQR qua ứng dụng Ngân hàng</h3>
+          <p style="color: var(--text-secondary); font-size: 0.94rem;">
+            Hỗ trợ chuyển khoản nhanh Agribank và liên ngân hàng NAPAS 24/7. Vui lòng kiểm tra đúng thông tin người nhận trước khi chuyển.
+          </p>
+          <ul class="bank-details mono">
+            <li><strong>Chủ tài khoản:</strong> NGUYEN TUAN THANH</li>
+            <li><strong>Số tài khoản:</strong> 7104205433117</li>
+            <li><strong>Ngân hàng:</strong> Agribank — Chi nhánh H. Bình Đại - Bến Tre</li>
+          </ul>
+          <button type="button" class="btn btn-outline" id="copyBankBtn">🏦 Sao chép STK &amp; Ngân hàng</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="lien-he">
+      <div class="contact-box">
+        <span class="section-tag mono">// 06. KẾT NỐI</span>
+        <h2 class="section-title">Cùng giao lưu về Nhiếp ảnh, STEM &amp; Bóng chuyền</h2>
+        <p>
+          Liên hệ trực tiếp qua số điện thoại <strong>0974093831</strong>, sao chép nhanh thông tin giới thiệu hoặc ghé thăm GitHub để cùng trao đổi nhé!
+        </p>
+        <div class="contact-actions">
+          <a href="tel:0974093831" class="btn btn-primary">📞 Gọi 0974093831</a>
+          <button type="button" class="btn btn-outline" id="copyInfoBtn">📋 Sao chép thông tin &amp; SĐT</button>
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">💻 GitHub cá nhân</a>
+        </div>
+        <div class="copy-feedback mono" id="copyFeedback" role="status" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 <strong>Nguyễn Tuấn Thanh</strong> — Lớp 11T2, Trường THPT Chuyên Bến Tre (Vĩnh Long) • SĐT: 0974093831.</p>
+    </div>
+  </footer>
+
+  <script>
+    // 1. Ảnh đại diện: ưu tiên images/anh-dai-dien.jpg, nếu chưa có thì hiện ảnh minh họa mẫu
+    const avatarImg = document.getElementById('avatarImg');
+    const avatarFallbackUrl = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80';
+    let avatarFallbackUsed = false;
+
+    avatarImg.addEventListener('error', () => {
+      if (!avatarFallbackUsed) {
+        avatarFallbackUsed = true;
+        avatarImg.src = avatarFallbackUrl;
+      }
+    });
+
+    // 2. Ảnh QR từ thiện: ưu tiên images/qr-tu-thien.jpg, nếu chưa có thì hiện ảnh VietQR Agribank
+    const charityQrImg = document.getElementById('charityQrImg');
+    const vietQrFallbackUrl = 'https://img.vietqr.io/image/VBA-7104205433117-compact2.png?accountName=NGUYEN%20TUAN%20THANH';
+    let
