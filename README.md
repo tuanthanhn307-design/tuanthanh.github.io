@@ -19,12 +19,13 @@
       --text-secondary: #94a3b8;
       --accent-stem: #38bdf8;
       --accent-photo: #f59e0b;
-      --accent-volley: #a78bfa;
-      --accent-creative: #fb7185;
-      --accent-charity: #34d399;
-      --border-color: rgba(148, 163, 184, 0.16);
-      --grid-color: rgba(56, 189, 248, 0.05);
-      --shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+     <div class="photo-card">
+          <img src="images/khoanh-khac-moi.jpg" alt="Khoảnh khắc cá nhân của Nguyễn Tuấn Thanh" style="object-position: center 22%;" />
+          <div class="photo-overlay">
+            <span class="photo-meta mono">11T2 • KHOẢNH KHẮC</span>
+            <div class="photo-caption">Khoảnh khắc kỷ niệm đáng nhớ</div>
+          </div>
+        </div>
     }
 
     [data-theme="light"] {
