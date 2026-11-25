@@ -18,7 +18,7 @@
       --text-primary: #f1f5f9;
       --text-secondary: #94a3b8;
       --accent-stem: #38bdf8;
-      --accent-photo: #f59e0b;
+      --accent-photo:
      <div class="photo-card">
           <img src="images/khoanh-khac-moi.jpg" alt="Khoảnh khắc cá nhân của Nguyễn Tuấn Thanh" style="object-position: center 22%;" />
           <div class="photo-overlay">
